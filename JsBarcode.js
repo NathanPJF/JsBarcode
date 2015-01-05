@@ -110,6 +110,11 @@
 			}
 		} else if (!(image instanceof HTMLCanvasElement)) {
 			// There is no jQuery object so just check if the given image was a canvas, if not set the source attr
+			
+			//Adjust variable for pure JavaScript method
+			image = image.replace('#','');
+			image = document.getElementById(image);
+			
 			image.setAttribute("src", uri);
 		}
 
